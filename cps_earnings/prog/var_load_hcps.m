@@ -1,15 +1,14 @@
-function [loadV, success] = var_load_hcps(varNameStr, setName, year1)
+function [loadV, success] = var_load_hcps(varNameStr, setName, varargin)
 
-fn = var_fn_hcps(varNameStr, setName, year1);
+fnS = var_fn_hcps(varNameStr, setName, varargin{:});
 
-if exist(fn, 'file')
+if exist(fnS.path, 'file')
    % Some variables are output as single by StatTransfer
-   loadV = load(fn);
+   loadV = load(fnS.path);
    loadV = loadV.saveS;
 else
    loadV = [];
    success = 0;
 end
-
 
 end

@@ -1,16 +1,13 @@
-function var_save_hcps(saveS, varNameStr, setName, year1)
+function var_save_hcps(saveS, varNameStr, setName, varargin)
 % Save a MAT variable
 %{
 Make directory if needed
 %}
 
-[fn, fDir] = var_fn_hcps(varNameStr, setName, year1);
+fnS = var_fn_hcps(varNameStr, setName, varargin{:});
+fnS.mkdir;
 
-if ~exist(fDir, 'dir')
-   filesLH.mkdir(fDir);
-end
-
-save(fn, 'saveS');
-fprintf('Saved file [%s] [%i]\n',  varNameStr, year1);
+save(fnS.path, 'saveS');
+fprintf('Saved file [%s]\n',  fnS.name);
 
 end

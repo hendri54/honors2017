@@ -9,7 +9,7 @@ function oneTest(testCase)
    setName = 'default';
    varName = 'test1';
    year1 = 1980;
-   var_save_hcps(xV, varName, setName, year1);
-   loadV = var_load_hcps(varName, setName, year1);
+   var_save_hcps(xV, varName, setName, 'year', year1);
+   loadV = var_load_hcps(varName, setName, 'year', year1);
    testCase.verifyEqual(loadV, xV);
 end

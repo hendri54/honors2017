@@ -22,7 +22,7 @@ for year1 = cS.yearV(:)'
    
    tbM(~validV,:) = [];
    
-   var_save_hcps(tbM, 'data_main', setName, year1);
+   var_save_hcps(tbM, 'data_main', setName, 'year', year1);
    
    fprintf('%i:  Observations %i / %i k \n',  year1,  round(n/1e3),  round(size(tbM,1) ./ 1e3));
 end
