@@ -1,3 +1,4 @@
+% Defines directory structure
 classdef Directories < handle
 
 properties

@@ -1,6 +1,14 @@
 function run_all_hcps(setName)
+% Run everything in sequence
+%{
+IN
+   setName  ::  char
+      defines settings used in data processing. See `const_hcps`
+%}
 
 cS = const_hcps(setName);
+
+% Make required directories
 dirS = param_hcps.Directories(setName);
 dirS.make_dirs;
 
